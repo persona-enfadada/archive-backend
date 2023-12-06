@@ -23,7 +23,6 @@ public class ExamController {
     @PostMapping("/{category}")
     public ResponseEntity<?> getFileList(@PathVariable String category){
         List<ExamListItemDto> examList = examService.getExamList(category);
-        System.out.println(category);
         return ResponseEntity.ok().body(examList);
     }
 }
