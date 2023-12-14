@@ -22,7 +22,7 @@ public class ExamController {
         return ResponseEntity.ok().body(exam);
     }
 
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")   
     @PostMapping("/{category}")
     public ResponseEntity<?> getFileList(@PathVariable String category){
         List<ExamListItemDto> examList = examService.getExamList(category);
@@ -30,4 +30,9 @@ public class ExamController {
         return ResponseEntity.ok().body(examList);
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/healthy")
+    public ResponseEntity<?> getHealthy(){
+        return ResponseEntity.ok().body("healthy");
+    }
 }
